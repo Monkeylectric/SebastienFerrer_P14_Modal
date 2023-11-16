@@ -6,7 +6,7 @@ export const ModalContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    display: ${props => props.$display ? "flex" : "none"}
+    display: flex;
 `;
 
 export const ModalOverlay = styled.div`
