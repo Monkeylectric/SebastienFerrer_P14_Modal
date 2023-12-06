@@ -14,9 +14,11 @@ function App() {
             <button onClick={handleDisplayedModal}>Open Modal</button>
             <Modal 
                 displayModal={displayModal} 
-                setDisplayModal={setDisplayModal}
-                overlayOpacity={.8}
-                message="Test message beaucoup trop long pour entrer dans la modal"
+                setDisplayModal={setDisplayModal} 
+                message="Test message beaucoup trop long pour entrer dans la modal" 
+                overlayOpacity={.8} 
+                modalBackground="#E2FA48" 
+                modalColor="#32a852" 
             />
         </div>
     )

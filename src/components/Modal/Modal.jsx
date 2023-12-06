@@ -23,7 +23,7 @@ const ModalBox = styled.div`
     position: relative;
     width: 30%;
     height: 10%;
-    background: #FFF;
+    background: ${props => props.$background ?? "#FFF"};
     border-radius: 10px;
 `;
 
@@ -35,6 +35,8 @@ const ModalBoxContent = styled.div`
     align-items: center;
     text-align: center;
     padding: 1em .5em;
+    font-weight: bold;
+    color: ${props => props.$color ?? "#000"};
 `;
 
 const ModalCloseBtn = styled.div`
@@ -52,7 +54,7 @@ const ModalCloseBtn = styled.div`
     z-index: 99;
 `;
 
-function Modal({displayModal, setDisplayModal, overlayOpacity, message}) {
+function Modal({displayModal, setDisplayModal, message, overlayOpacity, modalBackground, modalColor}) {
     const handleCloseModal = () => {
         setDisplayModal(!displayModal);
     }
@@ -60,9 +62,9 @@ function Modal({displayModal, setDisplayModal, overlayOpacity, message}) {
     return (
         displayModal && <ModalContainer>
             <ModalOverlay $opacity={overlayOpacity}>
-                <ModalBox>
+                <ModalBox $background={modalBackground}>
                     <ModalCloseBtn onClick={handleCloseModal}>X</ModalCloseBtn>
-                    {message && <ModalBoxContent>{message}</ModalBoxContent>}
+                    {message && <ModalBoxContent $color={modalColor}>{message}</ModalBoxContent>}
                 </ModalBox>
             </ModalOverlay>
         </ModalContainer>
