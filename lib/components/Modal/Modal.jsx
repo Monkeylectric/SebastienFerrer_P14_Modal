@@ -54,13 +54,9 @@ const ModalCloseBtn = styled.div`
     z-index: 99;
 `;
 
-function Modal({displayModal, setDisplayModal, message, overlayOpacity, modalBackground, modalColor}) {
-    const handleCloseModal = () => {
-        setDisplayModal(!displayModal);
-    }
-
+function Modal({handleCloseModal, message, overlayOpacity, modalBackground, modalColor}) {
     return (
-        displayModal && <ModalContainer>
+        <ModalContainer>
             <ModalOverlay $opacity={overlayOpacity}>
                 <ModalBox $background={modalBackground}>
                     <ModalCloseBtn onClick={handleCloseModal}>X</ModalCloseBtn>
@@ -71,4 +67,4 @@ function Modal({displayModal, setDisplayModal, message, overlayOpacity, modalBac
     )
 }
 
-export default Modal
+export default Modal;

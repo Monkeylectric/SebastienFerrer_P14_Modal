@@ -1,8 +1,11 @@
 {
   "name": "@monkeylectric/modal-wealth-health",
-  "version": "0.1.0",
+  "private": false,
+  "version": "0.1.6",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/modal-wealth-health.umd.cjs",
   "module": "./dist/modal-wealth-health.js",
   "exports": {
