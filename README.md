@@ -1,8 +1,49 @@
-# React + Vite
+# WealthHealth - Modal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
+- Utilisez cette commande pour installer le package: `npm i @monkeylectric/modal-wealth-health`
 
-Currently, two official plugins are available:
+## Usage
+```jsx
+import React, { useState } from 'react';
+import Modal from '@monkeylectric/modal-wealth-health';
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+const [displayModal, setDisplayModal] = useState(false);
+
+const handleDisplayedModal = () => {
+    setDisplayModal(true);
+}
+
+const handleCloseModal = () => {
+    setDisplayModal(false);
+}
+
+render(
+  <button onClick={() => handleDisplayedModal()}>Open Modal</button>
+  {displayModal && <Modal 
+      handleCloseModal={handleCloseModal}
+      message="message" 
+      overlayOpacity={.8} 
+      modalBackground="#E2FA48" 
+      modalColor="#32a852" 
+  />}
+)
+```
+
+## Paramètres
+
+### message
+> `string`
+Le message de la modal
+
+### overlayOpacity
+> `number`
+L'opacité de l'overlay en arrière-plan
+
+### modalBackground
+> `string`
+Couleur de fond de la modal
+
+### modalColor
+> `string`
+Couleur de texte de la modal

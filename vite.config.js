@@ -12,13 +12,12 @@ export default defineConfig({
             fileName: 'modal-wealth-health',
         },
         rollupOptions: {
-            // make sure to externalize deps that shouldn't be bundled
-            // into your library
-            external: ['react', 'styled-components'],
+            external: ['react', 'styled-components', 'prop-types'],
             output: {
                 globals: {
                     'react': 'React',
-                    'styled-components': 'styled'
+                    'styled-components': 'styled',
+                    'prop-types': 'PropTypes'
                 },
             },
         },

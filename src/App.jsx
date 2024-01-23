@@ -18,7 +18,7 @@ function App() {
             <button onClick={handleDisplayedModal}>Open Modal</button>
             {displayModal && <Modal 
                 handleCloseModal={handleCloseModal}
-                message="Test message beaucoup trop long pour entrer dans la modal" 
+                message="Entrer votre message ici" 
                 overlayOpacity={.8} 
                 modalBackground="#E2FA48" 
                 modalColor="#32a852" 

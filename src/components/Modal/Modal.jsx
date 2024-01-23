@@ -1,5 +1,11 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
+/**
+ * Styled component for modal container
+ * 
+ * @returns modal container component
+ */
 const ModalContainer = styled.div`
     width: 100%;
     height: 100%;
@@ -9,6 +15,11 @@ const ModalContainer = styled.div`
     display: flex;
 `;
 
+/**
+ * Styled component for modal overlay
+ * 
+ * @returns modal overlay component
+ */
 const ModalOverlay = styled.div`
     position: relative;
     width: 100%;
@@ -19,6 +30,11 @@ const ModalOverlay = styled.div`
     align-items: center;
 `;
 
+/**
+ * Styled component for modal box
+ * 
+ * @returns modal box component
+ */
 const ModalBox = styled.div`
     position: relative;
     width: 30%;
@@ -27,6 +43,13 @@ const ModalBox = styled.div`
     border-radius: 10px;
 `;
 
+/**
+ * Styled component for modal box content
+ * 
+ * @param {String} $color
+ * 
+ * @returns modal box content component
+ */
 const ModalBoxContent = styled.div`
     position: absolute;
     inset: 0;
@@ -39,6 +62,11 @@ const ModalBoxContent = styled.div`
     color: ${props => props.$color ?? "#000"};
 `;
 
+/**
+ * Styled component for modal close button
+ * 
+ * @returns modal close button component
+ */
 const ModalCloseBtn = styled.div`
     position: relative;
     bottom: 12px;
@@ -54,6 +82,18 @@ const ModalCloseBtn = styled.div`
     z-index: 99;
 `;
 
+/**
+ * Modal component which display modal
+ * on click button
+ * 
+ * @param {Function} handleCloseModal 
+ * @param {String} message 
+ * @param {Number} overlayOpacity 
+ * @param {String} modalBackground 
+ * @param {String} modalColor 
+ * 
+ * @returns modal component
+ */
 function Modal({handleCloseModal, message, overlayOpacity, modalBackground, modalColor}) {
     return (
         <ModalContainer>
@@ -67,4 +107,12 @@ function Modal({handleCloseModal, message, overlayOpacity, modalBackground, moda
     )
 }
 
-export default Modal
+Modal.propTypes = {
+    handleCloseModal: PropTypes.func,
+    message: PropTypes.string.isRequired,
+    overlayOpacity: PropTypes.number,
+    modalBackground: PropTypes.string,
+    modalColor: PropTypes.string,
+}
+
+export default Modal;
